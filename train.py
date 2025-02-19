@@ -38,13 +38,26 @@ from memory import (
 from models import LLM_CLS
 from utils import save_trajectories_log, load_trajectories_log, plot_trial_stats, split_logs_by_task, alfworld_results_per_env_name, get_webshop_mean_scores, get_fewshot_max_tokens
 from agent.reflect import Count
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 
 @hydra.main(version_base=None, config_path="configs", config_name="train")
 def main(cfg : DictConfig) -> None:
+    # if cfg.agent.llm == "mistral":
+    #   print("Loading huggingface mistral model..")
+    #   mistral_model_id = "mistralai/mistral-7b-Instruct-v0.1"
+    #   tokenizer = AutoTokenizer.from_pretrained(mistral_model_id)
+    #   model = AutoModelForCausalLM.from_pretrained(mistral_model_id)
+    #   model.to("cuda") if torch.cuda.is_available() else model.to("cpu")
+    #   # cfg.agent.llm.tokenizer = tokenizer
+    #   # cfg.agent.llm.model = model 
+    #   openai_api_key = None
+    # else:
     if cfg.testing:
         openai_api_key = 'NO_KEY_FOR_TESTING'
     else:
         openai_api_key = os.environ['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in os.environ else getpass.getpass("Enter or paste your OpenAI API Key: ")
+
     LOG_PATH = Path('/'.join([cfg.log_dir, cfg.benchmark.name, cfg.agent_type]))
     LOG_PATH.mkdir(parents=True, exist_ok=True)
 
@@ -66,11 +79,15 @@ def main(cfg : DictConfig) -> None:
         out = {'log': '', 'dicts': [], 'true_log': f'{str(cfg)}'}
     log, dicts, true_log = out['log'], out['dicts'], out['true_log']
 
+    # Getting n tasks
+    full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
+    subset_tasks = full_tasks[:1]
+
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
         system_instruction=SYSTEM_INSTRUCTION[cfg.benchmark.name],
         human_instruction=HUMAN_INSTRUCTION[cfg.benchmark.name],
-        tasks=INIT_TASKS_FN[cfg.benchmark.name](cfg),
+        tasks=subset_tasks,
         fewshots=FEWSHOTS[cfg.benchmark.name],
         system_prompt=system_message_prompt,
         env=ENVS[cfg.benchmark.name],
