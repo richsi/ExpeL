@@ -52,7 +52,7 @@ class MistralWrapper:
       try:
           # tokenize prompt
           input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids.to(self.device)
-          output_ids = self.model.generate(
+          output_ids = self.llm.generate(
             input_ids,
             max_length=input_ids.shape[1] + 200,
             do_sample=False
@@ -80,7 +80,17 @@ class MistralWrapper:
   def _format_messages(self, messages: List[ChatMessage]) -> str:
     conversation = ""
     for msg in messages:
-      conversation += f"{msg.role}: {msg.content}\n"
+        if hasattr(msg, "role"):
+            role = msg.role
+        elif isinstance(msg, HumanMessage):
+            role = "Human"
+        elif isinstance(msg, AIMessage):
+            role = "AI"
+        elif isinstance(msg, SystemMessage):
+            role = "System"
+        else:
+            role = "Unknown"
+        conversation += f"{role}: {msg.content}\n"
     return conversation
 
 
@@ -98,7 +108,7 @@ class LlamaWrapper:
       try:
           # tokenize prompt
           input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids.to(self.device)
-          output_ids = self.model.generate(
+          output_ids = self.llm.generate(
             input_ids,
             max_length=input_ids.shape[1] + 200,
             do_sample=False
@@ -126,7 +136,7 @@ class LlamaWrapper:
   def _format_messages(self, messages: List[ChatMessage]) -> str:
     conversation = ""
     for msg in messages:
-      conversation += f"{msg.role}: {msg.content}\n"
+        conversation += f"System: {msg.content}\n"
     return conversation
 
 

@@ -100,7 +100,8 @@ def shuffled_chunks(lst: List[Any], num_chunks: int):
     random.shuffle(chunks)
     return chunks
 
-def token_counter(text: str, llm: str = 'gpt-3.5-turbo', tokenizer: Callable = None) -> int:
+def token_counter(text: str, llm: str = 'meta-llama/Llama-3.2-1B', tokenizer: Callable = None) -> int:
+# def token_counter(text: str, llm: str = 'gpt-3.5-turbo', tokenizer: Callable = None) -> int:
     """
     Counts the number of tokens in the text.
     
@@ -111,6 +112,16 @@ def token_counter(text: str, llm: str = 'gpt-3.5-turbo', tokenizer: Callable = N
     """
     if 'gpt' in llm:
         return len(tiktoken.encoding_for_model(llm).encode(text))
+    
+    elif 'llama' in llm.lower():
+        if tokenizer is None:
+            from transformers import AutoTokenizer
+            # You can adjust the model identifier if you use a different Llama model.
+            tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B")
+        # Tokenize and count tokens; note that some tokenizers have different methods,
+        # so adjust if needed (e.g., use tokenizer.tokenize or tokenizer.encode).
+        tokens = tokenizer.tokenize(text)
+        return len(tokens)
 
     raise NotImplementedError
 
