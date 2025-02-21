@@ -38,7 +38,6 @@ from memory import (
 from models import LLM_CLS
 from utils import save_trajectories_log, load_trajectories_log, plot_trial_stats, split_logs_by_task, alfworld_results_per_env_name, get_webshop_mean_scores, get_fewshot_max_tokens
 from agent.reflect import Count
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 @hydra.main(version_base=None, config_path="configs", config_name="train")
@@ -81,7 +80,7 @@ def main(cfg : DictConfig) -> None:
 
     # Getting n tasks
     full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
-    subset_tasks = full_tasks[:1]
+    subset_tasks = full_tasks[:5]
 
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
