@@ -76,21 +76,10 @@ class MistralWrapper:
       response = response.replace('\n', '')
     return response
 
-
   def _format_messages(self, messages: List[ChatMessage]) -> str:
     conversation = ""
     for msg in messages:
-        if hasattr(msg, "role"):
-            role = msg.role
-        elif isinstance(msg, HumanMessage):
-            role = "Human"
-        elif isinstance(msg, AIMessage):
-            role = "AI"
-        elif isinstance(msg, SystemMessage):
-            role = "System"
-        else:
-            role = "Unknown"
-        conversation += f"{role}: {msg.content}\n"
+        conversation += f"System: {msg.content}\n"
     return conversation
 
 
