@@ -48,6 +48,7 @@ def main(cfg : DictConfig) -> None:
         openai_api_key = 'NO_KEY_FOR_TESTING'
     else:
         openai_api_key = os.environ['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in os.environ else getpass.getpass("Enter or paste your OpenAI API Key: ")
+
     LOG_PATH = Path('/'.join([cfg.log_dir, cfg.benchmark.name, cfg.agent_type]))
     SAVE_PATH = LOG_PATH / 'extracted_insights'
     SAVE_PATH.mkdir(exist_ok=True)
@@ -72,12 +73,15 @@ def main(cfg : DictConfig) -> None:
     dicts = out['dicts']
     log = out['log'] if cfg.resume else ''
 
+    full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
+    subset_tasks = full_tasks[:3]
+
     cfg.folded = True
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
         system_instruction=SYSTEM_INSTRUCTION[cfg.benchmark.name],
         human_instruction=HUMAN_INSTRUCTION[cfg.benchmark.name],
-        tasks=INIT_TASKS_FN[cfg.benchmark.name](cfg),
+        tasks=subset_tasks,
         fewshots=FEWSHOTS[cfg.benchmark.name],
         system_prompt=system_message_prompt,
         env=ENVS[cfg.benchmark.name],
@@ -138,7 +142,9 @@ def main(cfg : DictConfig) -> None:
     for k, eval_idxs in enumerate(eval_idx_list):
         if k < starting_fold:
             continue
-        training_ids = set(range(num_training_tasks)) - set(eval_idxs)
+        # training_ids = set(range(num_training_tasks)) - set(eval_idxs)
+        training_ids = set(range(3)) - set(eval_idxs)
+        print(training_ids)
         (SAVE_PATH / f"fold_{k}").mkdir(exist_ok=True)
         log += f'################## FOLD {k} ##################\n'
         log += react_agent.create_rules(
