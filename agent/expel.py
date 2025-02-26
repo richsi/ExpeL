@@ -327,6 +327,7 @@ class ExpelAgent(ReflectAgent):
         else:
             all_logs = loaded_log
         for training_id in training_ids:
+            print(training_id)
             training_task = self.idx2task[training_id]
             if (loaded_dict is not None and loaded_dict['critique_summary_section'] == 'compare' and \
                 loaded_dict['critique_summary_idx'][0] == training_id):
