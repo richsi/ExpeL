@@ -1,0 +1,18 @@
+################ Compare Critiques ################
+
+
+################ SUCCESS CRITIQUES ################
+
+-------
+AGREE: The existing rule is strongly relevant for the task. It is a good idea to add it to the list of rules. It is also a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+REMOVE: The existing rule is contradictory or similar/duplicated to other existing rules. It is a good idea to remove it from the list of rules. It is also a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+EDIT: The existing rule is not general enough or can be enhanced, rewrite and improve it. It is a good idea to edit it and add a new rule that is very different from the existing rule and relevant for other tasks.
+
+ADD: Add new rules that are very different from existing rules and relevant for other tasks. It is a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+The rules should be concise
+-------
+- Add new rules that are very different from existing rules and relevant for other tasks. It is a good idea to add a new rule that is very different from the existing rule and relevant for other tasks. {2}
+
