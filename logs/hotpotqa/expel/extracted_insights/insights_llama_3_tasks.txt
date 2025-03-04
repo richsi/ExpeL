@@ -1,0 +1,117 @@
+################## FOLD 0 ##################
+################ Compare Critiques ################
+
+
+################ SUCCESS CRITIQUES ################
+
+-------
+AGREE: The existing rule is strongly relevant for the task. It is a good idea to add it to the list of rules. It is also a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+REMOVE: The existing rule is contradictory or similar/duplicated to other existing rules. It is a good idea to remove it from the list of rules. It is also a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+EDIT: The existing rule is not general enough or can be enhanced, rewrite and improve it. It is a good idea to edit it and add a new rule that is very different from the existing rule and relevant for other tasks.
+
+ADD: Add new rules that are very different from existing rules and relevant for other tasks. It is a good idea to add a new rule that is very different from the existing rule and relevant for other tasks.
+
+The rules should be concise
+-------
+- Add new rules that are very different from existing rules and relevant for other tasks. It is a good idea to add a new rule that is very different from the existing rule and relevant for other tasks. {2}
+
+################## FOLD 1 ##################
+################ Compare Critiques ################
+Question: Which of Jonny Craig and Pete Doherty has been a member of more bands ?
+Thought 1: hought 1: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 1: Search[Jonny Craig]
+Observation 1: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 2: hought 2: Jonny Craig is a singer-songwriter. I need to search Pete Doherty next and find his bands.
+Action 2: Search[Pete Doherty]
+Observation 2: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 3: hought 3: hought 3: Jonny Craig and Pete Doherty have been members of more bands. So the answer is Jonny Craig.
+Action 3: Finish[Jonny Craig]
+Observation 3: Answer is CORRECT
+Thought 1: hought 1: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 1: Search[Jonny Craig]
+Observation 1: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 2: hought 2: Jonny Craig is a singer and songwriter. I need to search Pete Doherty next and find his bands, then find which one has been a member of more bands.
+Action 2: Search[Pete Doherty]
+Observation 2: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 3: hought 3: hought 3: Jonny Craig and Pete Doherty have been a member of more bands. So Jonny Craig has been a member of more bands than Pete Doherty.
+Action 3: Finish[yes]
+Observation 3: Answer is INCORRECT
+-------
+GREE: If the existing rule is strongly relevant for the task, then add it to the list of rules. If the existing rule is not relevant, then remove it from the list of rules. If the existing rule is contradictory or similar/duplicated to other existing rules, then remove it from the list of rules. If the existing rule is not general enough or can be enhanced, rewrite and improve it, then add it to the list of rules. If the existing rule is not relevant, then remove it from the list of rules.
+
+REMOVE: If one existing rule is contradictory or similar/duplicated to other existing rules, then remove it from the list of rules. If the existing rule is not general enough or can be enhanced, rewrite and improve it, then add it to the list of rules. If the existing rule is not relevant, then remove it from the list of rules.
+
+EDIT: If any existing rule is not general enough or can be enhanced, rewrite and improve it, then add
+-------
+
+- 
+
+Question: Which of Jonny Craig and Pete Doherty has been a member of more bands ?
+Thought 1: hought 1: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 1: Search[Jonny Craig]
+Observation 1: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 2: hought 2: Jonny Craig is a singer-songwriter. I need to search Pete Doherty next and find his bands.
+Action 2: Search[Pete Doherty]
+Observation 2: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 3: hought 3: hought 3: Jonny Craig and Pete Doherty have been members of more bands. So the answer is Jonny Craig.
+Action 3: Finish[Jonny Craig]
+Observation 3: Answer is CORRECT
+Thought 1: hought 1: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 1: Search[Jonny Craig]
+Observation 1: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 2: hought 2: I need to search Pete Doherty next and find his bands, then find which one has been a member of more bands.
+Action 2: Search[Pete Doherty]
+Observation 2: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 3: hought 3: hought 3: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 3: Search[Jonny Craig]
+Observation 3: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 4: hought 4: hought 4: hought 4: I need to search Pete Doherty next and find his bands, then find which one has been a member of more bands.
+Action 4: Search[Pete Doherty]
+Observation 4: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 5: hought 5: hought 5: hought 5: hought 5: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 5: Search[Jonny Craig]
+Observation 5: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: hought 6: h
+Thought 6: 
+Thought 6: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: hought 7: h
+Observation 6: You are thinking too many times without taking action.
+Thought 7: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: hought 8: h
+Thought 7: bservation 7: You are thinking too many times without taking action.
+Thought 7: hought 8: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: hought 9: h
+Observation 7: You are thinking too many times without taking action.
+-------
+GREE: If the existing rule is strongly relevant for the task, then you can add it to the list of rules. For example, if the existing rule is about the question "Which of Jonny Craig and Pete Doherty has been a member of more bands?", then you can add the following rule to the list of rules: AGREE 1: Jonny Craig and Pete Doherty have been members of more bands.
+
+REMOVE: If one existing rule is contradictory or similar/duplicated to other existing rules, then you can remove it from the list of rules. For example, if the existing rule is about the question "Which of Jonny Craig and Pete Doherty has been a member of more bands?", then you can remove the following rule from the list of rules: REMOVE 1: Jonny Craig and Pete Doherty have been members of more bands.
+
+EDIT: If any existing rule is not general enough or can be enhanced, rewrite and improve it, then you
+-------
+
+- 
+
+
+
+################ SUCCESS CRITIQUES ################
+Question: Which of Jonny Craig and Pete Doherty has been a member of more bands ?
+Thought 1: hought 1: I need to search Jonny Craig and Pete Doherty, find their bands, then find which one has been a member of more bands.
+Action 1: Search[Jonny Craig]
+Observation 1: Jenny Craig, Inc., often known simply as Jenny Craig, is an American weight loss, weight management, and nutrition company. At its peak, the company had more than 700 weight management centers in Australia, the United States, Canada, and New Zealand. The program combined individual weight management counseling with a menu of frozen meals and other foods which were distributed through its centers or shipped directly to clients. Founded as an independent company, the business was purchased by Nestlé in 2006 for approximately $600 million. However, the business declined, and on 4 May 2023, the company announced that it was going out of business after 40 years. It was revived as an e-commerce store by Wellful (the parent company of Nutrisystem) sometime after this announcement in fall 2023.
+Thought 2: hought 2: Jonny Craig is a singer-songwriter. I need to search Pete Doherty next and find his bands.
+Action 2: Search[Pete Doherty]
+Observation 2: Peter Doherty (born 12 March 1979) is an English musician. He is best known for being co-frontman of The Libertines, which he formed with Carl Barât in 1997. His other musical projects are indie bands Babyshambles and Peter Doherty and the Puta Madres.
+Thought 3: hought 3: hought 3: Jonny Craig and Pete Doherty have been members of more bands. So the answer is Jonny Craig.
+Action 3: Finish[Jonny Craig]
+Observation 3: Answer is CORRECT
+-------
+GREE: If the existing rule is strongly relevant for the task, then add it to the list of rules. If the existing rule is not relevant, then remove it. If the existing rule is contradictory or similar/duplicated to other existing rules, then remove it. If the existing rule is not general enough or can be enhanced, rewrite and improve it. If the existing rule is not relevant, then add it to the list of rules.
+
+REMOVE: If one existing rule is contradictory or similar/duplicated to other existing rules, then remove it. If the existing rule is not general enough or can be enhanced, rewrite and improve it. If the existing rule is not relevant, then add it to the list of rules.
+
+EDIT: If any existing rule is not general enough or can be enhanced, rewrite and improve it. If the existing rule is not relevant, then add it to the list of rules.
+
+ADD: Add new rules that are very different from existing rules and relevant for other tasks.
+-------
+- Add new rules that are very different from existing rules and relevant for other tasks. {2}
+
