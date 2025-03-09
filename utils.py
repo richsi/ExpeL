@@ -123,6 +123,16 @@ def token_counter(text: str, llm: str = 'meta-llama/Llama-3.2-1B', tokenizer: Ca
         tokens = tokenizer.tokenize(text)
         return len(tokens)
 
+    elif 'mistral' in llm.lower():
+        if tokenizer is None:
+            from transformers import AutoTokenizer
+            tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.1")
+        # Tokenize and count tokens; note that some tokenizers have different methods,
+        # so adjust if needed (e.g., use tokenizer.tokenize or tokenizer.encode).
+        tokens = tokenizer.tokenize(text)
+        return len(tokens)
+
+
     raise NotImplementedError
 
 def print_message(message: ChatMessage, token_counter: Callable = None, testing: bool = True, extra_text: str = '') -> None:
