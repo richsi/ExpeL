@@ -81,7 +81,7 @@ def main(cfg : DictConfig) -> None:
 
     # Getting n tasks
     full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
-    subset_tasks = full_tasks[:3]
+    subset_tasks = full_tasks[:100]
 
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
