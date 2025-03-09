@@ -74,7 +74,7 @@ def main(cfg : DictConfig) -> None:
     log = out['log'] if cfg.resume else ''
 
     full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
-    subset_tasks = full_tasks[:3]
+    subset_tasks = full_tasks[:100] # TODO CHANGE NUMBER
 
     cfg.folded = True
     react_agent = AGENT[cfg.agent_type](
