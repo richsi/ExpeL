@@ -54,7 +54,8 @@ def main(cfg : DictConfig) -> None:
     if cfg.testing:
         openai_api_key = 'NO_KEY_FOR_TESTING'
     else:
-        openai_api_key = os.environ['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in os.environ else getpass.getpass("Enter or paste your OpenAI API Key: ")    
+        openai_api_key = 'NO_KEY'
+        # openai_api_key = os.environ['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in os.environ else getpass.getpass("Enter or paste your OpenAI API Key: ")    
     LOG_PATH = Path('/'.join([cfg.log_dir, cfg.benchmark.name, cfg.agent_type]))
     SAVE_PATH = LOG_PATH / 'eval'
     SAVE_PATH.mkdir(exist_ok=True)
