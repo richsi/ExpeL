@@ -142,7 +142,7 @@ def main(cfg : DictConfig) -> None:
     for k, eval_idxs in enumerate(eval_idx_list):
         if k < starting_fold:
             continue
-        training_ids = set(range(num_training_tasks)) - set(eval_idxs)
+        training_ids = set(range(num_training_tasks)) - set(eval_idxs) #TODO: MODIFIED
         # training_ids = set(range(3)) - set(eval_idxs)
         print(training_ids)
         (SAVE_PATH / f"fold_{k}").mkdir(exist_ok=True)
