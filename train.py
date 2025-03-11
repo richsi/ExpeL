@@ -81,13 +81,13 @@ def main(cfg : DictConfig) -> None:
 
     # Getting n tasks
     full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
-    subset_tasks = full_tasks[:100]
+    # subset_tasks = full_tasks[:1]
 
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
         system_instruction=SYSTEM_INSTRUCTION[cfg.benchmark.name],
         human_instruction=HUMAN_INSTRUCTION[cfg.benchmark.name],
-        tasks=subset_tasks,
+        tasks=full_tasks,
         fewshots=FEWSHOTS[cfg.benchmark.name],
         system_prompt=system_message_prompt,
         env=ENVS[cfg.benchmark.name],
@@ -175,6 +175,7 @@ You are using the following language model: {react_agent.llm.model_name}
     print(f'Finished. Success: {success}, Fail: {fail}, Halted: {halted}')
 
     parsed_result = split_logs_by_task(text=log, num_tasks=len(react_agent.tasks))
+    # print(f"parsed_result: {parsed_result}")
     reflection_results = plot_trial_stats(parsed_result=parsed_result, benchmark=cfg.benchmark.name, max_trials=cfg.agent.max_reflection_depth + 1, save_path=f"{LOG_PATH}/{cfg.run_name}_logs_stats.png")
 
     results = ', '.join([f"{k}: {v}" for k, v in reflection_results.items()]) + '\n'
