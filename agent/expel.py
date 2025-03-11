@@ -375,6 +375,7 @@ class ExpelAgent(ReflectAgent):
                 all_success = random_divide_list(all_success, self.success_critique_num)
         else:
             all_success = loaded_dict['critique_summary_all_success']
+        # all_success = [] #TODO: comment out
         for success_chunk in all_success:
             if (loaded_dict is not None and loaded_dict['critique_summary_section'] == 'success' and \
                 loaded_dict['critique_summary_idx'] == success_chunk):

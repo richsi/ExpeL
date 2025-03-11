@@ -14,7 +14,8 @@ class AlfworldEnv(BaseEnv):
         self.max_steps = max_steps
         self.gamefile = gamefile
         self.config = config
-        self.main_env = getattr(alfworld.agents.environment, self.config.env.type)(self.config, train_eval=self.config.split)
+        env_class = alfworld.agents.environment.get_environment(self.config.env.type)
+        self.main_env = env_class(self.config, train_eval=self.config.split)
         self.main_env.game_files = [self.gamefile]
         self.task = "housekeeper robot. The agent was placed in a household environment and a task to complete."
         self.env_name = get_env_name_from_gamefile(gamefile)

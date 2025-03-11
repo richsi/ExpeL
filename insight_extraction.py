@@ -74,14 +74,14 @@ def main(cfg : DictConfig) -> None:
     log = out['log'] if cfg.resume else ''
 
     full_tasks = INIT_TASKS_FN[cfg.benchmark.name](cfg)
-    subset_tasks = full_tasks[:100] # TODO CHANGE NUMBER
+    # subset_tasks = full_tasks[:] # TODO CHANGE NUMBER
 
     cfg.folded = True
     react_agent = AGENT[cfg.agent_type](
         name=cfg.ai_name,
         system_instruction=SYSTEM_INSTRUCTION[cfg.benchmark.name],
         human_instruction=HUMAN_INSTRUCTION[cfg.benchmark.name],
-        tasks=subset_tasks,
+        tasks=full_tasks,
         fewshots=FEWSHOTS[cfg.benchmark.name],
         system_prompt=system_message_prompt,
         env=ENVS[cfg.benchmark.name],
@@ -126,7 +126,8 @@ def main(cfg : DictConfig) -> None:
     react_agent.load_checkpoint(dicts[-1], no_load_list=no_load_list)
 
     random.seed(cfg.seed)
-    num_training_tasks = len(INIT_TASKS_FN[cfg.benchmark.name](cfg))
+    # num_training_tasks = len(INIT_TASKS_FN[cfg.benchmark.name](cfg))
+    num_training_tasks = 1 #TODO: modified
     if not cfg.resume:
         resume = False
     else:

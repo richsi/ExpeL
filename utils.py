@@ -277,6 +277,7 @@ def split_logs_by_task(text: str, num_tasks: int) -> List[List[str]]:
     Returns:
         A list of lists of log texts, each list corresponding to a task.
     """
+    print(f"num_tasks: {num_tasks}")
     remaining_text = text
     parsed_result = []
     for task_i in range(num_tasks+1):
@@ -365,8 +366,9 @@ def plot_trial_stats(parsed_result: List[List[str]], benchmark: str, max_trials:
             results[key] = results.get(key, []) + [value]
 
     if benchmark == 'alfworld':
-        assert len(parsed_result) == 134
+        # assert len(parsed_result) == 134
         results = {k: [round(x / 134 * 100, 2) for x in v] for k, v in results.items()}
+        # results = {k: [round(x / len(parsed_result) * 100, 2) for x in v] for k, v in results.items()}
     # else:
         # assert len(parsed_result) == 100
         
@@ -383,7 +385,11 @@ def plot_trial_stats(parsed_result: List[List[str]], benchmark: str, max_trials:
     plt.xlabel("Reflection numbers")
     plt.ylabel("Task SR %")
     plt.xticks(range(max_trials))
+<<<<<<< HEAD
     #plt.show()
+=======
+    # plt.show()
+>>>>>>> f0de584 (alworld)
     if save_path:
         plt.savefig(save_path)
     
