@@ -385,11 +385,7 @@ def plot_trial_stats(parsed_result: List[List[str]], benchmark: str, max_trials:
     plt.xlabel("Reflection numbers")
     plt.ylabel("Task SR %")
     plt.xticks(range(max_trials))
-<<<<<<< HEAD
-    #plt.show()
-=======
     # plt.show()
->>>>>>> f0de584 (alworld)
     if save_path:
         plt.savefig(save_path)
     
