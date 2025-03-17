@@ -1,0 +1,38 @@
+################## FOLD 0 ##################
+################ Compare Critiques ################
+
+
+################ SUCCESS CRITIQUES ################
+################## FOLD 1 ##################
+################ Compare Critiques ################
+
+
+################ SUCCESS CRITIQUES ################
+
+-------
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <RULE>
+
+<OPERATION> <RULE NUMBER>: <R
+-------
+- 
+
